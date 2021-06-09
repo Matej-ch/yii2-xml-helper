@@ -29,9 +29,7 @@ class XmlHelper extends \yii\base\BaseObject
 
             libxml_clear_errors();
 
-            return [
-                'message' => $msg ?? 'Error message not found',
-            ];
+            throw new \Exception($msg ?? 'Error message not found');
         }
 
         if (!$this->asArray) {
